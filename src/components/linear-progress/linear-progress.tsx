@@ -30,20 +30,20 @@ const LinearProgress = ({ totalTimeMs }: Props) => {
     }, []);
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const interval = setInterval(() => {
             if (progressRef.current) {
-                progressRef.current(timer);
+                progressRef.current(interval);
             }
         }, 100);
 
         return () => {
-            clearInterval(timer);
+            clearInterval(interval);
         };
     }, []);
 
     return (
         <LinearProgressComponent
-            sx={{ width: '100%' }}
+            sx={{ width: 1 }}
             variant="determinate"
             value={progress}
         />
